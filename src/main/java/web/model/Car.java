@@ -1,5 +1,10 @@
 package web.model;
 
+import org.springframework.stereotype.Component;
+import javax.annotation.PostConstruct;
+import java.util.ArrayList;
+
+@Component
 public class Car {
     private String brand;
     private int year;
@@ -29,9 +34,21 @@ public class Car {
         this.horsepower = horsepower;
     }
 
+    public Car() {
+    }
+
     public Car(String brand, int year, int horsepower) {
         this.brand = brand;
         this.year = year;
         this.horsepower = horsepower;
+    }
+
+    @Override
+    public String toString() {
+        return "Car{" +
+                "brand='" + brand + '\'' +
+                ", year=" + year +
+                ", horsepower=" + horsepower +
+                '}';
     }
 }
